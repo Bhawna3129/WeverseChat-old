@@ -3,7 +3,7 @@
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
@@ -24,6 +24,8 @@ import {
 import { useState, useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { View } from "react-native";
+import { fontMedium, fontSmall } from "../constants/Typography";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -39,11 +41,12 @@ const BottomTabNavigator = () => {
         name="Friends"
         component={TabOneNavigator}
         options={{
+          tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
           tabBarIcon: ({ color, focused }) => (
             <FontAwesome
               name={focused ? "user" : "user-o"}
               size={24}
-              color={color}
+              color={Colors.light.bottomTabIconSelected}
             />
           ),
         }}
@@ -52,11 +55,13 @@ const BottomTabNavigator = () => {
         name="Chat"
         component={TabTwoNavigator}
         options={{
+          tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
+
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "chatbubble" : "chatbubble-outline"}
               size={24}
-              color={color}
+              color={Colors.light.bottomTabIconSelected}
             />
           ),
         }}
@@ -65,11 +70,21 @@ const BottomTabNavigator = () => {
         name="Explore"
         component={TabThreeNavigator}
         options={{
+          tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
+
           tabBarIcon: ({ color, focused }) =>
             focused ? (
-              <FontAwesome name="search" size={24} color={color} />
+              <FontAwesome
+                name="search"
+                size={24}
+                color={Colors.light.bottomTabIconSelected}
+              />
             ) : (
-              <AntDesign name="search1" size={24} color={color} />
+              <AntDesign
+                name="search1"
+                size={24}
+                color={Colors.light.bottomTabIconSelected}
+              />
             ),
         }}
       />
@@ -77,6 +92,8 @@ const BottomTabNavigator = () => {
         name="Settings"
         component={TabFourNavigator}
         options={{
+          tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
+
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={
@@ -85,7 +102,7 @@ const BottomTabNavigator = () => {
                   : "ellipsis-horizontal-outline"
               }
               size={24}
-              color={color}
+              color={Colors.light.bottomTabIconSelected}
             />
           ),
         }}
@@ -117,11 +134,25 @@ const TabOneNavigator = () => {
           headerTitle: "Friends",
           headerStyle: { backgroundColor: Colors.light.header },
           headerTitleAlign: "left",
-          headerTintColor: "white",
+          headerTintColor: Colors.light.headerText,
           headerTitleStyle: {
-            fontSize: 20,
+            fontSize: fontMedium,
             fontWeight: "700",
           },
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: 90,
+                marginRight: 10,
+              }}
+            >
+              <AntDesign name="search1" size={22} color="white" />
+              <AntDesign name="adduser" size={22} color="white" />
+              <Ionicons name="settings-outline" size={22} color="white" />
+            </View>
+          ),
         }}
       />
     </TabOneStack.Navigator>
@@ -140,10 +171,30 @@ const TabTwoNavigator = () => {
           headerTitle: "Chat",
           headerTitleAlign: "left",
           headerTitleStyle: {
-            fontSize: 20,
+            fontSize: fontMedium,
             fontWeight: "700",
           },
+          headerTintColor: Colors.light.headerText,
+
           headerStyle: { backgroundColor: Colors.light.header },
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: 90,
+                marginRight: 10,
+              }}
+            >
+              <AntDesign name="search1" size={22} color="white" />
+              <MaterialCommunityIcons
+                name="chat-plus-outline"
+                size={22}
+                color="white"
+              />
+              <Ionicons name="settings-outline" size={22} color="white" />
+            </View>
+          ),
         }}
       />
     </TabTwoStack.Navigator>
@@ -162,10 +213,25 @@ const TabThreeNavigator = () => {
           headerTitle: "Explore",
           headerTitleAlign: "left",
           headerTitleStyle: {
-            fontSize: 20,
+            fontSize: fontMedium,
             fontWeight: "700",
           },
+          headerTintColor: Colors.light.headerText,
+
           headerStyle: { backgroundColor: Colors.light.header },
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: 60,
+                marginRight: 10,
+              }}
+            >
+              <AntDesign name="search1" size={22} color="white" />
+              <Ionicons name="settings-outline" size={22} color="white" />
+            </View>
+          ),
         }}
       />
     </TabThreeStack.Navigator>
@@ -184,10 +250,25 @@ const TabFourNavigator = () => {
           headerTitle: "Settings",
           headerTitleAlign: "left",
           headerTitleStyle: {
-            fontSize: 20,
+            fontSize: fontMedium,
             fontWeight: "700",
           },
+          headerTintColor: Colors.light.headerText,
+
           headerStyle: { backgroundColor: Colors.light.header },
+          headerRight: () => (
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: 60,
+                marginRight: 10,
+              }}
+            >
+              <AntDesign name="search1" size={22} color="white" />
+              <Ionicons name="settings-outline" size={22} color="white" />
+            </View>
+          ),
         }}
       />
     </TabFourStack.Navigator>
