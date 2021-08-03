@@ -10,16 +10,16 @@ import * as React from "react";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import ChatScreen from "../screens/ChatScreen";
+import FriendScreen from "../screens/FriendScreen";
 import TabThreeScreen from "../screens/TabThreeScreen";
 import TabFourScreen from "../screens/TabFourScreen";
 import {
   BottomTabParamList,
   TabFourParamList,
-  TabOneParamList,
+  ChatScreenParamList,
   TabThreeParamList,
-  TabTwoParamList,
+  FriendScreenParamList,
 } from "../types";
 import { useState, useEffect } from "react";
 import { FontAwesome } from "@expo/vector-icons";
@@ -39,7 +39,7 @@ const BottomTabNavigator = () => {
     >
       <BottomTab.Screen
         name="Friends"
-        component={TabOneNavigator}
+        component={FriendScreenNavigator}
         options={{
           tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
           tabBarIcon: ({ color, focused }) => (
@@ -53,7 +53,7 @@ const BottomTabNavigator = () => {
       />
       <BottomTab.Screen
         name="Chat"
-        component={TabTwoNavigator}
+        component={ChatScreenNavigator}
         options={{
           tabBarActiveTintColor: Colors.light.bottomTabIconSelected,
 
@@ -122,14 +122,15 @@ function TabBarIcon(props: {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const TabOneStack = createStackNavigator<FriendScreenParamList>();
 
-const TabOneNavigator = () => {
+//Frend
+const FriendScreenNavigator = () => {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
+        name="FriendScreen"
+        component={FriendScreen}
         options={{
           headerTitle: "Friends",
           headerStyle: { backgroundColor: Colors.light.header },
@@ -159,14 +160,15 @@ const TabOneNavigator = () => {
   );
 };
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+//Chat
+const TabTwoStack = createStackNavigator<ChatScreenParamList>();
 
-const TabTwoNavigator = () => {
+const ChatScreenNavigator = () => {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
+        name="ChatScreen"
+        component={ChatScreen}
         options={{
           headerTitle: "Chat",
           headerTitleAlign: "left",

@@ -19,14 +19,14 @@ export type BottomTabParamList = {
   Settings: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type FriendScreenParamList = {
+  FriendScreen: undefined;
   screenOptions: any;
   tabBarIcon: any;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type ChatScreenParamList = {
+  ChatScreen: undefined;
   screenOptions: any;
 };
 
@@ -36,4 +36,23 @@ export type TabThreeParamList = {
 
 export type TabFourParamList = {
   TabFourScreen: undefined;
+};
+
+export type User = {
+  id: String;
+  name: String;
+  imageUri: String;
+};
+
+export type Message = {
+  id?: String;
+  content: String;
+  createdAt?: number;
+  messageRead?: false;
+};
+
+export type ChatRoom = {
+  id?: String;
+  users?: [User];
+  lastMessage: Message;
 };
