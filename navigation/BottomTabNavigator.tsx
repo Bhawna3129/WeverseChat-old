@@ -125,14 +125,14 @@ function TabBarIcon(props: {
 const TabOneStack = createStackNavigator<FriendScreenParamList>();
 
 //Frend
-const FriendScreenNavigator = () => {
+const FriendScreenNavigator = (props: any) => {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="FriendScreen"
         component={FriendScreen}
         options={{
-          headerTitle: "Friends",
+          headerTitle: props.route.name,
           headerStyle: { backgroundColor: Colors.light.header },
           headerTitleAlign: "left",
           headerTintColor: Colors.light.headerText,
@@ -163,7 +163,7 @@ const FriendScreenNavigator = () => {
 //Chat
 const TabTwoStack = createStackNavigator<ChatScreenParamList>();
 
-const ChatScreenNavigator = () => {
+const ChatScreenNavigator = (props) => {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
