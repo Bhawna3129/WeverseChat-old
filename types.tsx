@@ -45,14 +45,14 @@ export type User = {
 };
 
 export type Message = {
-  id?: String;
+  id: String;
   content: String;
-  createdAt?: number;
-  messageRead?: false;
+  createdAt: String;
+  messageRead: false;
 };
 
 export type ChatRoom = {
-  id?: String;
-  users?: [User];
+  id: String;
+  users: [User];
   lastMessage: Message;
 };
