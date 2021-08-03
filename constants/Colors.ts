@@ -1,5 +1,6 @@
 const tintColorLight = "#000";
 const tintColorDark = "#fff";
+const weverseMain = "#03E8C7";
 
 export default {
   light: {
@@ -8,6 +9,7 @@ export default {
     tint: tintColorLight,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorLight,
+    header: weverseMain,
   },
   dark: {
     text: "#fff",
@@ -15,5 +17,6 @@ export default {
     tint: tintColorDark,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
+    header: weverseMain,
   },
 };

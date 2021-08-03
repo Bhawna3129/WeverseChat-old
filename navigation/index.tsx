@@ -32,7 +32,7 @@ const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
-const RootNavigator = (props) => {
+const RootNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />

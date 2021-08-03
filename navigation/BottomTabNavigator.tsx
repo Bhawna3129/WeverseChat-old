@@ -32,8 +32,8 @@ const BottomTabNavigator = () => {
   const [loaded, setLoaded] = useState<any>(false);
   return (
     <BottomTab.Navigator
+      screenOptions={{ headerShown: false, tabBarStyle: {} }}
       initialRouteName="Friends"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
     >
       <BottomTab.Screen
         name="Friends"
@@ -107,58 +107,91 @@ function TabBarIcon(props: {
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
-function TabOneNavigator() {
+const TabOneNavigator = () => {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: "Friends" }}
+        options={{
+          headerTitle: "Friends",
+          headerStyle: { backgroundColor: Colors.light.header },
+          headerTitleAlign: "left",
+          headerTintColor: "white",
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: "700",
+          },
+        }}
       />
     </TabOneStack.Navigator>
   );
-}
+};
 
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
-function TabTwoNavigator() {
+const TabTwoNavigator = () => {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+        options={{
+          headerTitle: "Chat",
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: "700",
+          },
+          headerStyle: { backgroundColor: Colors.light.header },
+        }}
       />
     </TabTwoStack.Navigator>
   );
-}
+};
 
 const TabThreeStack = createStackNavigator<TabThreeParamList>();
 
-function TabThreeNavigator() {
+const TabThreeNavigator = () => {
   return (
     <TabThreeStack.Navigator>
       <TabThreeStack.Screen
         name="TabThreeScreen"
         component={TabThreeScreen}
-        options={{ headerTitle: "Tab Three Title" }}
+        options={{
+          headerTitle: "Explore",
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: "700",
+          },
+          headerStyle: { backgroundColor: Colors.light.header },
+        }}
       />
     </TabThreeStack.Navigator>
   );
-}
+};
 
 const TabFourStack = createStackNavigator<TabFourParamList>();
 
-function TabFourNavigator() {
+const TabFourNavigator = () => {
   return (
     <TabFourStack.Navigator>
       <TabFourStack.Screen
         name="TabFourScreen"
         component={TabFourScreen}
-        options={{ headerTitle: "Tab Four Title" }}
+        options={{
+          headerTitle: "Settings",
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontSize: 20,
+            fontWeight: "700",
+          },
+          headerStyle: { backgroundColor: Colors.light.header },
+        }}
       />
     </TabFourStack.Navigator>
   );
-}
+};
 
 export default BottomTabNavigator;

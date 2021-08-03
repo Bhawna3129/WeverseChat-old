@@ -21,10 +21,13 @@ export type BottomTabParamList = {
 
 export type TabOneParamList = {
   TabOneScreen: undefined;
+  screenOptions: any;
+  tabBarIcon: any;
 };
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+  screenOptions: any;
 };
 
 export type TabThreeParamList = {
