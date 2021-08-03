@@ -1,4 +1,4 @@
-var faker = require("faker");
+const faker = require("faker");
 export default [
   {
     id: "1",
@@ -17,7 +17,7 @@ export default [
     lastMessage: {
       id: "m1",
       content: faker.lorem.words(),
-      createdAt: "2020-10-03T14:48:00.000z",
+      createdAt: faker.date.recent(),
     },
   },
   {
@@ -34,11 +34,10 @@ export default [
         imageUri: faker.image.avatar(),
       },
     ],
-    lastmessage: {
+    lastMessage: {
       id: "m1",
-      content: faker.lorem.sentence(),
-
-      createdAt: "2020-10-03T14:48:00.000z",
+      content: faker.lorem.words(),
+      createdAt: faker.date.recent(),
     },
   },
   {
@@ -55,11 +54,70 @@ export default [
         imageUri: faker.image.avatar(),
       },
     ],
-    lastmessage: {
+    lastMessage: {
       id: "m1",
-      content: faker.lorem.sentence(),
-
-      createdAt: "2020-10-03T14:48:00.000z",
+      content: faker.lorem.words(),
+      createdAt: faker.date.recent(),
+    },
+  },
+  {
+    id: "4",
+    users: [
+      {
+        id: "u1",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+      {
+        id: "u2",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+    ],
+    lastMessage: {
+      id: "m1",
+      content: faker.lorem.words(),
+      createdAt: faker.date.recent(),
+    },
+  },
+  {
+    id: "5",
+    users: [
+      {
+        id: "u1",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+      {
+        id: "u2",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+    ],
+    lastMessage: {
+      id: "m1",
+      content: faker.lorem.words(),
+      createdAt: faker.date.recent(),
+    },
+  },
+  {
+    id: "6",
+    users: [
+      {
+        id: "u1",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+      {
+        id: "u2",
+        name: faker.name.findName(),
+        imageUri: faker.image.avatar(),
+      },
+    ],
+    lastMessage: {
+      id: "m1",
+      content: faker.lorem.words(),
+      createdAt: faker.date.recent(),
     },
   },
 ];

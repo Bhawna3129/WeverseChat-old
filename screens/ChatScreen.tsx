@@ -1,17 +1,19 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 import { Text, View } from "../components/Themed";
 import ChatListItem from "../components/ChatListItem";
 import chatRooms from "../mocks/data/chat";
 
-const ChatScreen = () => {
+const ChatScreen = (props) => {
+  console.log(props);
   return (
     <View style={styles.container}>
-      <ChatListItem chatRoom={chatRooms[0]} />
-      <ChatListItem chatRoom={chatRooms[0]} />
-      <ChatListItem chatRoom={chatRooms[0]} />
-      <ChatListItem chatRoom={chatRooms[0]} />
-      <ChatListItem chatRoom={chatRooms[0]} />
+      <FlatList
+        style={{ width: "100%" }}
+        renderItem={({ item }) => <ChatListItem chatRoom={item} />}
+        data={chatRooms}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 };
