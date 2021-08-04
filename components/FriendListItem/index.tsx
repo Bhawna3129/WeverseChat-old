@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, TouchableWithoutFeedback, Image } from "react-native";
 import styles from "./styles";
+import { Feather } from "@expo/vector-icons";
 
 const FriendListItem = (props: any) => {
   const { users } = props;
@@ -16,14 +17,25 @@ const FriendListItem = (props: any) => {
           <Image source={{ uri: users.imageUri }} style={styles.avatar} />
           <View style={styles.middleContainer}>
             <Text style={styles.userName}>{users.name}</Text>
+            <Text style={styles.statusText}>
+              {users.statusMessage ? users.statusMessage : null}
+            </Text>
           </View>
         </View>
 
-        <View style={styles.rightContainer}>
+        <View
+          style={
+            users.currentMusic
+              ? styles.rightContainer
+              : styles.rightContainerNone
+          }
+        >
           <Text
-            style={users.currentMusic ? styles.currentMusic : styles.statusText}
+            ellipsizeMode="tail"
+            numberOfLines={1}
+            style={styles.currentMusic}
           >
-            {users.currentMusic ? users.currentMusic : users.statusMessage}
+            {users.currentMusic ? "🎵 " + users.currentMusic : null}
           </Text>
         </View>
       </View>
