@@ -5,9 +5,12 @@
 
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  createStackNavigator,
+  // useNavigationContainerRef,
+} from "@react-navigation/stack";
 import * as React from "react";
-
+import { useRef } from "react";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ChatScreen from "../screens/ChatScreen";
@@ -29,7 +32,10 @@ import { fontMedium, fontSmall } from "../constants/Typography";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
-const BottomTabNavigator = () => {
+const BottomTabNavigator = (props: any, event: any) => {
+  // const ref = React.createRef();
+  const tabRef = useRef();
+  // const tabRef =
   const colorScheme = useColorScheme();
   const [loaded, setLoaded] = useState<any>(false);
   return (

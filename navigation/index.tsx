@@ -37,25 +37,33 @@ const Navigation = ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
 const Stack = createStackNavigator<RootStackParamList>();
 
 const RootNavigator = (props: any) => {
-  console.log();
+  console.log(props);
   return (
     <Stack.Navigator
       screenOptions={{
+        headerBackImage: () => (
+          <Ionicons name="chevron-back" size={24} color="white" />
+        ),
+
         headerShown: true,
+        headerBackTitleVisible: true,
+        headerBackTitleStyle: {
+          color: Colors.light.header,
+        },
         headerStyle: {
           backgroundColor: Colors.light.header,
-          height: 70,
+          height: 90,
         },
         headerTitleStyle: {
-          color: "black",
+          color: Colors.light.tabIconSelected,
         },
       }}
     >
       <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
-        options={({ route }) => ({
-          title: route.name === "Root" ? null : "other",
+        options={({ route, navigation }) => ({
+          title: "Root",
         })}
       />
       <Stack.Screen
@@ -67,7 +75,7 @@ const RootNavigator = (props: any) => {
         name="ChatRoom"
         component={ChatRoomScreen}
         options={({ route }) => ({
-          title: route.params?.name,
+          title: route.params?.id,
           headerRight: () => (
             <View
               style={{

@@ -5,11 +5,7 @@ import { Feather } from "@expo/vector-icons";
 
 const FriendListItem = (props: any) => {
   const { users } = props;
-  console.log(users);
-  // console.log(users[1].imageUri);
-  const onPress = () => {
-    console.log("11111111111");
-  };
+  const onPress = () => {};
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.container}>

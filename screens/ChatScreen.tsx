@@ -5,7 +5,6 @@ import ChatListItem from "../components/ChatListItem";
 import chatRooms from "../mocks/data/chat";
 
 const ChatScreen = () => {
-  // console.log(props);
   return (
     <View style={styles.container}>
       <FlatList

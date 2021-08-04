@@ -18,6 +18,7 @@ export type BottomTabParamList = {
   Chat: undefined;
   Explore: undefined;
   Settings: undefined;
+  ref: any;
 };
 
 export type FriendScreenParamList = {
@@ -50,6 +51,9 @@ export type Message = {
   content: String;
   createdAt: String;
   messageRead: false;
+  message: String;
+  user: any;
+  ref: any;
 };
 
 export type ChatRoom = {
@@ -57,3 +61,5 @@ export type ChatRoom = {
   users: [User];
   lastMessage: Message;
 };
+
+export type ChatMessage = {};

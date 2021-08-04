@@ -13,7 +13,7 @@ export default [
     name: faker.name.findName(),
     statusMessage: faker.lorem.words(),
     imageUri: faker.image.avatar(),
-    // currentMusic: "She's a bad Mama Jama - Carl Carlton",
+    currentMusic: "She's a bad Mama Jama - Carl Carlton",
   },
   {
     id: "3",

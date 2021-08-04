@@ -12,6 +12,7 @@ export type ChatListItemProps = {
 const ChatListItem = (props: any) => {
   const { chatRoom } = props;
   const user = chatRoom.users[1];
+  // console.log(props);
 
   const navigation = useNavigation();
 
@@ -19,8 +20,8 @@ const ChatListItem = (props: any) => {
     navigation.navigate("ChatRoom", {
       id: chatRoom.id,
       name: user.name,
-      ...props,
     });
+    console.log(props);
   };
   return (
     <TouchableWithoutFeedback onPress={onPress}>
