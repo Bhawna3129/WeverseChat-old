@@ -1,17 +1,19 @@
 import * as React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
+import FriendListItem from "../components/FriendListItem";
 import { Text, View } from "../components/Themed";
+import users from "../mocks/data/users";
 
 const FriendScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
+      <FlatList
+        style={{ width: "100%" }}
+        renderItem={({ item }) => <FriendListItem users={item} />}
+        data={users}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
@@ -22,15 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
   },
 });
 

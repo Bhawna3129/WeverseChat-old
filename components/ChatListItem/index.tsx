@@ -3,13 +3,13 @@ import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import { ChatRoom } from "../../types";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
-
 const moment = require("moment");
+
 export type ChatListItemProps = {
   chatRoom: ChatRoom;
 };
 
-const ChatListItem = (props) => {
+const ChatListItem = (props: any) => {
   const { chatRoom } = props;
   const user = chatRoom.users[1];
 

@@ -163,7 +163,7 @@ const FriendScreenNavigator = (props: any) => {
 //Chat
 const TabTwoStack = createStackNavigator<ChatScreenParamList>();
 
-const ChatScreenNavigator = (props) => {
+const ChatScreenNavigator = (props: any) => {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen

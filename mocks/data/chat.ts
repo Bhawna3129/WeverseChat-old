@@ -1,4 +1,5 @@
-const faker = require("faker");
+const faker = require("faker/locale/de");
+// import * as faker from './locale'
 export default [
   {
     id: "1",
